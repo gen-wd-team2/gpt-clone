@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="perp.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions"
+          >
+            <i class="bi bi-layout-text-sidebar"></i>
+          </button>
+          <div
+            class="offcanvas offcanvas-start"
+            data-bs-scroll="true"
+            tabindex="-1"
+            id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+                icon
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body ">
+              <p>Kingsford part</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-secondary drop">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+
+          <div class="dropdown">
+            <a
+              class="btn btn-secondary dropdown-toggle drop"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Drop
+            </a>
+            <ul class="dropdown-menu menu">
+              <li>
+                <button class="dropdown-item">
+                  <i class="bi bi-stars"></i>ChatGPT Plus
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item">
+                  <i class="bi bi-command"></i> ChatGPT
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item">
+                  <i class="bi bi-arrow-repeat"></i>Temporary chat
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="btn-group right">
+          <button
+            type="button"
+            class="btn btn-secondary dropdown-toggle drop"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end menu">
+            <li>
+              <button class="dropdown-item" type="button">
+                <i class="bi bi-person"></i>My AI
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" type="button">
+                <i class="bi bi-braces"></i>Customize AI
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" type="button">
+                <i class="bi bi-gear"></i>Settings
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid middlesection">
+      <div class="logo text-center"><i class="bi bi-droplet"></i></div>
+      <div class="container-fluid middlebuttons row row-cols-1 row-cols-lg-5 g-2 g-lg-3">
+        <button type="button" class="btn  btn-outline-secondary px-2 pb-3 pt-2"> 
+         <i class="bi bi-mortarboard" style="color: blueviolet;"></i>
+          <div>Text inviting Perp to barbecue</div>
+        </button>
+        <button type="button" class="btn btn-outline-secondary px-2 pb-3 pt-2">
+            <i class="bi bi-pen" style="color: green;"></i>
+          <div>Experience Seoul like a location</div>
+        </button>
+        <button type="button" class="btn btn-outline-secondary px-2 pb-3 pt-2">
+            <i class="bi bi-lightbulb" style="color: yellow;"></i>
+            <div>Overcome procrastination</div>
+        </button>
+        <button type="button" class="btn btn-outline-secondary px-2 pb-3 pt-2 ">
+            <i class="bi bi-rocket-takeoff" style="color: blue;"></i>
+          <div>Recipe with what's in kichen</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Type your question here"
+          aria-label="Type your question here"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >
+          <i class="bi bi-paperclip"></i>
+        </button>
+
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >
+        <i class="bi bi-arrow-up-circle"></i>
+        </button>
+      </div>
+    </div>
+
+    <p id="bottom-text">ChatGPT can make mistakes. Check important info.</p>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
