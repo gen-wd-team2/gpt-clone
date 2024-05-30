@@ -7,7 +7,10 @@ body{
     color: aliceblue; 
     height: 100vh;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    height: 100vh; /* Make sure the body takes up the full viewport height */
+    padding: 20px; /* Add padding for readability */
     }
 
 nav{
