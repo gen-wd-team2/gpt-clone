@@ -30,7 +30,7 @@ document.getElementById('refreshButton').addEventListener('click', function() {
 
 
 //This part was written by Frederick
-//const API_KEY = 'sk-proj-t0Uu83FTGrdB42sXgHk4T3BlbkFJtsijqDutQOkuXUjB6AFN'
+const API_KEY = 'sk-proj-t0Uu83FTGrdB42sXgHk4T3BlbkFJtsijqDutQOkuXUjB6AFN'
 const chatInput = document.querySelector('#questionInput')
 const submitButton = document.querySelector('#askButton')
 const chatMessages = document.querySelector('#chatMessages');
@@ -44,6 +44,37 @@ const createElement = (html, className) => {
   return chatDiv;
 }
 
+const getChatResponse = () => {
+  const API_URL = 'https://api.openai.com/v1/chat/completions';
+
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+        'Authorization': 'Bearer ${API_KEY}',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        model: "text-davinci-003",
+        prompt: userText,
+        //messages: [{role: "user", content: "Hello!"}],
+        max_tokens: 2048,
+        temperature: 0.2,
+        n: 1,
+        stop: null
+        })  
+}
+
+const showTypingAnimation = () => {
+  const html = `<div>
+                  <div style="--delay: 0.2s"></div>
+                  <div style="--delay: 0.3s"></div>
+                  <div style="--delay: 0.4s"></div>
+                </div>`;
+  const outgoingChat = createElement(html,'incoming');
+  chatMessages.appendChild(outgoingChat);
+  getChatResponse();
+}
+
 const handleOutgoingChat = () => {
   userText = chatInput.value.trim(); //get chat input and remove whitespaces
   if (userText) {
@@ -54,6 +85,7 @@ const handleOutgoingChat = () => {
   setTimeout(() => { // Scroll after a short delay to ensure new chat appears separately
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }, 100);
+  setTimeout(showTypingAnimation, 500);
         }
     }
 
