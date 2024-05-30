@@ -114,3 +114,33 @@ button p{
     width: 35%;
    border-radius: 70%rem;
 }
+
+/* Fred added this part of the code */
+.chat-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /*position: fixed;*/
+    right: 20px;
+    top: 100px;
+    margin-left: 20%;
+    background-color: grey;
+    border-color: none;
+    overflow-y: auto;
+  }
+  .chat {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+  }
+  .outgoing {
+    text-align: right;
+    color: black;
+  }
+  .incoming {
+    background-color: #E5E5EA;
+    text-align: left;
+  }

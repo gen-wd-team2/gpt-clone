@@ -30,34 +30,61 @@ document.getElementById('refreshButton').addEventListener('click', function() {
 
 
 //This part was written by Frederick
-const API_KEY = 'sk-proj-t0Uu83FTGrdB42sXgHk4T3BlbkFJtsijqDutQOkuXUjB6AFN'
+//const API_KEY = 'sk-proj-t0Uu83FTGrdB42sXgHk4T3BlbkFJtsijqDutQOkuXUjB6AFN'
+const chatInput = document.querySelector('#questionInput')
 const submitButton = document.querySelector('#askButton')
+const chatMessages = document.querySelector('#chatMessages');
 
+let userText = null;
 
-
-async function getMessage() {
-    console.log('clicked')
-    // const options = {
-    //     method: 'POST',
-    //     headers: {
-    //         'Authorization': 'Bearer ${API_KEY}',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         model: "gpt-3.5-turbo-16k",
-    //         messages: [{role: "user", content: "Hello!"}],
-    //         max_tokens: 100
-    //         })  
-    // }
-    // try {
-    //     const response = await fetch('https://api.openai.com/v1/chat/completions', options)
-    //     const data = await response.json()
-    //     console.log(data)
-    // }
-    // catch (error){
-    //     console.error(error)
-    // }
+const createElement = (html, className) => {
+  const chatDiv = document.createElement("p");
+  chatDiv.classList.add('chat', className);
+  chatDiv.innerHTML = html;
+  return chatDiv;
 }
 
-submitButton.addEventListener('click', getMessage)
+const handleOutgoingChat = () => {
+  userText = chatInput.value.trim(); //get chat input and remove whitespaces
+  if (userText) {
+  const html = `<p>${userText}</p>`;
+  const outgoingChat = createElement(html,'outgoing');
+  chatMessages.appendChild(outgoingChat); // Append the chat message to the chat container
+  chatInput.value = ''; // Clear the input field after sending the message
+  setTimeout(() => { // Scroll after a short delay to ensure new chat appears separately
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 100);
+        }
+    }
+
+// async function getMessage() {
+//     console.log('clicked')
+//     // const options = {
+//     //     method: 'POST',
+//     //     headers: {
+//     //         'Authorization': 'Bearer ${API_KEY}',
+//     //         'Content-Type': 'application/json'
+//     //     },
+//     //     body: JSON.stringify({
+//     //         model: "gpt-3.5-turbo-16k",
+//     //         messages: [{role: "user", content: "Hello!"}],
+//     //         max_tokens: 100
+//     //         })  
+//     // }
+//     // try {
+//     //     const response = await fetch('https://api.openai.com/v1/chat/completions', options)
+//     //     const data = await response.json()
+//     //     console.log(data)
+//     // }
+//     // catch (error){
+//     //     console.error(error)
+//     // }
+// }
+
+submitButton.addEventListener('click', handleOutgoingChat)
+chatInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    handleOutgoingChat();
+  }
+});
 
