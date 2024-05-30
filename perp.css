@@ -1,0 +1,116 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    background:#212121; ;
+    color: aliceblue; 
+    height: 100vh;
+    margin: 0;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    height: 100vh; /* Make sure the body takes up the full viewport height */
+    padding: 20px; /* Add padding for readability */
+    }
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.left{
+    display: flex;
+}
+
+.right{
+    
+}
+
+.middlesection{
+    display: grid;
+    place-content: center;
+    min-height: 80vh;
+}
+
+ .middlebuttons button{
+   /* &:hover{
+        color:#2f2f2f;
+    } */
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    color: rgba(155, 155, 155, 1);
+    font-size: 12px;
+    max-width: 9rem;
+    text-align: left;
+    border-radius: 15px;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent), var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+ }
+
+.logo{
+    padding-bottom: 1rem;
+}
+
+.logo i{
+    text-align: center;
+    font-size: 50px;
+    padding-block: .5rem;
+}
+
+.middlebuttons{
+    font-size: 15px;
+    font-weight: 600;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+button p{
+    --tw-text-opacity: 1;
+    color: rgba(155, 155, 155, var(--tw-text-opacity));
+    text-align: left;
+}
+
+.middlebuttons p{
+    padding:5px, 0;
+}
+
+.offcanvas.offcanvas-start {
+    background-color: rgb(10, 8, 8);
+    width: 240px;
+    color: white;
+}
+
+ input.form-control{
+  padding: 10px; 
+  display: flex; 
+  align-items: center; 
+  border-radius: 50px; 
+  background-color:#2f2f2f; 
+}
+
+#bottom-text{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: xx-small;
+    padding-top: 5px;
+    color: gray;
+}
+
+.menu {
+    background-color: #212121;
+   
+}
+.drop{
+    border:grey;
+    background-color: #212121;
+  
+}
+.input{
+    width: 35%;
+   border-radius: 70%rem;
+}
