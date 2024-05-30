@@ -47,11 +47,15 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body ">
+            <div class="offcanvas-body">
               <p>Kingsford part</p>
             </div>
           </div>
-          <button type="button" class="btn btn-outline-secondary drop">
+          <button
+            type="button"
+            class="btn btn-outline-secondary drop"
+            id="refreshButton"
+          >
             <i class="bi bi-pencil-square"></i>
           </button>
 
@@ -117,21 +121,35 @@
 
     <div class="container-fluid middlesection">
       <div class="logo text-center"><i class="bi bi-droplet"></i></div>
-      <div class="container-fluid middlebuttons row row-cols-1 row-cols-lg-5 g-2 g-lg-3">
-        <button type="button" class="btn  btn-outline-secondary px-2 pb-3 pt-2"> 
-         <i class="bi bi-mortarboard" style="color: blueviolet;"></i>
+      <div
+        class="container-fluid middlebuttons row row-cols-1 row-cols-lg-5 g-2 g-lg-3"
+      >
+        <button
+          type="button"
+          class="btn btn-outline-secondary px-2 pb-3 pt-2 question-button"
+        >
+          <i class="bi bi-mortarboard" style="color: blueviolet"></i>
           <div>Text inviting Perp to barbecue</div>
         </button>
-        <button type="button" class="btn btn-outline-secondary px-2 pb-3 pt-2">
-            <i class="bi bi-pen" style="color: green;"></i>
+        <button
+          type="button"
+          class="btn btn-outline-secondary px-2 pb-3 pt-2 question-button"
+        >
+          <i class="bi bi-pen" style="color: green"></i>
           <div>Experience Seoul like a location</div>
         </button>
-        <button type="button" class="btn btn-outline-secondary px-2 pb-3 pt-2">
-            <i class="bi bi-lightbulb" style="color: yellow;"></i>
-            <div>Overcome procrastination</div>
+        <button
+          type="button"
+          class="btn btn-outline-secondary px-2 pb-3 pt-2 question-button"
+        >
+          <i class="bi bi-lightbulb" style="color: yellow"></i>
+          <div>Overcome procrastination</div>
         </button>
-        <button type="button" class="btn btn-outline-secondary px-2 pb-3 pt-2 ">
-            <i class="bi bi-rocket-takeoff" style="color: blue;"></i>
+        <button
+          type="button"
+          class="btn btn-outline-secondary px-2 pb-3 pt-2 question-button"
+        >
+          <i class="bi bi-rocket-takeoff" style="color: blue"></i>
           <div>Recipe with what's in kichen</div>
         </button>
       </div>
@@ -140,29 +158,26 @@
     <div class="container mt-5">
       <div class="input-group">
         <input
+          id="questionInput"
           type="text"
           class="form-control"
           placeholder="Type your question here"
           aria-label="Type your question here"
         />
         <button
+          id="uploadButton"
           class="btn btn-outline-secondary"
           type="button"
-          id="button-addon2"
         >
           <i class="bi bi-paperclip"></i>
         </button>
 
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          id="button-addon2"
-        >
-        <i class="bi bi-arrow-up-circle"></i>
+        <button id="askButton" class="btn btn-outline-secondary" type="button">
+          <i class="bi bi-arrow-up-circle"></i>
         </button>
+        <input type="file" id="fileInput" style="display: none" />
       </div>
     </div>
-
     <p id="bottom-text">ChatGPT can make mistakes. Check important info.</p>
 
     <script
@@ -170,5 +185,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="perp.js"></script>
   </body>
 </html>
