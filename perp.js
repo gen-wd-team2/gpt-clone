@@ -1,3 +1,5 @@
+let fileHasBeenUploaded = false
+
 document.getElementById('refreshButton').addEventListener('click', function() {
     location.reload();
   });
@@ -12,14 +14,19 @@ document.getElementById('refreshButton').addEventListener('click', function() {
   document.getElementById('uploadButton').addEventListener('click', function() {
     document.getElementById('fileInput').click();
   });
-
+// editted this too
   document.getElementById('fileInput').addEventListener('change', function(event) {
     const file = event.target.files[0];
-    if (file) {
-      displayAnswer(`File uploaded: ${file.name}`);
+    if (file && file.type === 'application/pdf') {
+      uploadFile(file)
+      fileHasBeenUploaded = true
+      alert(`${file.name} uploaded successfully`);
+    }else {
+      alert('Please upload a PDF file.');
+      event.target.value = ''
     }
   });
-
+// Etornam wrote this
   const uploadFile = async (file) => {
     const formData = new FormData()
     formData.append('file', file)
