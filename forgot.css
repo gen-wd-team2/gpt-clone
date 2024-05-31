@@ -1,0 +1,119 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+/* .texty {
+color: wheat !important;
+
+} */
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box {
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 50px 60px 70px;
+}
+
+.form-box h1 {
+    color: blue;
+    position: relative;
+}
+
+.form-box h1::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-box p {
+    color: black; /* Adjust paragraph color to black */
+    /* Override the red line from h1::after */
+    text-decoration: none;
+}
+
+.inputfield {
+    background-color: palevioletred;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-height: 70px;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.inputfield i {
+    margin-right: 10px;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding-left: 15px;
+    font-size: 18px; 
+}
+
+.btn-field {
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    padding: 30px;
+}
+
+.btn-field button {
+    flex-basis: 100%; 
+    background: purple;
+    height: 50px; 
+    border: 0;
+    padding: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.5s;
+    font-size: 18px;
+}
+
+.reset {
+    margin: 0; 
+}
+
+.btn-field button:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}
+
+.btn-field button.disable {
+    background: orange;
+    color: dimgray;
+}
