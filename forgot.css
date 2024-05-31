@@ -5,19 +5,15 @@
     box-sizing: border-box;
 }
 
-body {
-
-background-color: black;
-
-}
 
 
 
 
-.texty {
+
+/* .texty {
 color: wheat !important;
 
-}
+} */
 
 .container {
     width: 100%;
