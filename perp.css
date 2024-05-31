@@ -141,6 +141,16 @@ button p{
 .dropdown-item{
     color:rgba(155, 155, 155, 1);
 }
+
+.dropdown-item .bi {
+    margin-right: 10px; 
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;}
+
 .input{
     width: 35%;
    border-radius: 70%rem;
