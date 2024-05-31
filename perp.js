@@ -5,8 +5,7 @@ document.getElementById('refreshButton').addEventListener('click', function() {
   });
 
 function displayAnswer(question) {
-    // You can add logic here to display the answer
-    console.log(question); // This is just a placeholder. Replace with your actual logic.
+    console.log(question); 
   }
   
  document.querySelectorAll('.question-button').forEach(button => {
