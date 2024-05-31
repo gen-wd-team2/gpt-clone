@@ -51,7 +51,7 @@ document.getElementById('refreshButton').addEventListener('click', function() {
 
 
 //This part was written by Frederick
-const API_KEY = 'sk-proj-t0Uu83FTGrdB42sXgHk4T3BlbkFJtsijqDutQOkuXUjB6AFN'
+const API_KEY = 'sk-proj-WzUn6gGb3aUDucSlTohkT3BlbkFJcP6zOfNliGR7YPkiVTwh'
 const chatInput = document.querySelector('#questionInput')
 const submitButton = document.querySelector('#askButton')
 const chatMessages = document.querySelector('#chatMessages');
@@ -81,7 +81,7 @@ const getChatResponse = async (incomingChat) => {
     body: JSON.stringify({
       model: 'gpt-3.5-turbo-16k',
       messages: [
-        //{ role: 'system', content: 'You are a helpful assistant.' },
+        { role: 'system', content: 'You are a helpful assistant.' },
         { role: 'user', content: userText },
       ],
       max_tokens: 2048,
