@@ -2,13 +2,16 @@
 *{
     font-family:'Open Sans', sans-serif;
 }
+header{
+    margin-top: 0;
+}
 
 body{
     background:#212121; ;
     color: aliceblue; 
     height: 100vh;
     margin: 0;
-    overflow-y: scroll;
+    /*overflow-y: scroll;
     height: 100vh; /* Make sure the body takes up the full viewport height */
     padding: 20px; /* Add padding for readability */
     }
@@ -24,9 +27,9 @@ nav{
     display: flex;
 }
 
-/* .right{
-    
-} */
+.sidebar {
+    border-style: none;
+}
 
 .middlesection{
     display: grid;
@@ -90,6 +93,24 @@ button p{
   align-items: center; 
   border-radius: 50px; 
   background-color:#2f2f2f; 
+  
+}
+.input-group{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+}
+#questionInput::placeholder {
+    color:rgba(155, 155, 155, 1);;
+    opacity: 1; 
+}
+
+#questionInput {
+    background-color: #333; 
+    color: white; 
+}
+.form-control{
+    border: 0 solid #e3e3e3;
 }
 
 #bottom-text{
@@ -102,13 +123,23 @@ button p{
 }
 
 .menu {
-    background-color: #212121;
+    background-color: #2f2f2f;
    
 }
+.menu li{
+    background-color: #2f2f2f;
+    --bs-dropdown-link-hover-bg: #3b3b3b;
+    --bs-dropdown-link-active-bg: #3b3b3b;
+}
+
 .drop{
     border:grey;
     background-color: #212121;
-  
+    color:rgba(155, 155, 155, 1);
+}
+
+.dropdown-item{
+    color:rgba(155, 155, 155, 1);
 }
 .input{
     width: 35%;
