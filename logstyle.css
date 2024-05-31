@@ -4,15 +4,9 @@
     box-sizing: border-box;
 }
 
-
 body {
-
-background-color: gray;
-
-
+    transition: background-color 2s ease; /* Smooth transition for background color */
 }
-
-
 
 .container {
     width: 100%;
@@ -36,6 +30,7 @@ background-color: gray;
 .form-box h1 {
     color: blue;
     position: relative;
+    margin-bottom: 40px; /* Add margin bottom to create space for animated text */
 }
 
 .form-box h1::after {
@@ -48,6 +43,23 @@ background-color: gray;
     bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.animated-text {
+    font-size: 24px; /* Larger font size */
+    color: purple; /* Purple color */
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 3s infinite;
+    position: absolute; /* Position the text absolutely */
+    top: -40px; /* Adjust the top position */
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Center the text horizontally */
+}
+
+@keyframes fadeIn {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 .inputfield {
@@ -73,7 +85,7 @@ input {
     border: 0;
     outline: 0;
     padding-left: 15px;
-    font-size: 18px; /* Larger font size for better readability */
+    font-size: 18px;
 }
 
 form p {
@@ -89,14 +101,14 @@ form p {
 
 .btn-field button {
     flex-basis: 48%;
-    background: white;
-    height: 60px; /* Increased button height */
+    background: purple;
+    height: 60px;
     border-radius: 40px;
     border: 0;
     outline: 0;
     cursor: pointer;
     transition: background-color 0.5s, transform 0.5s;
-    font-size: 18px; /* Larger font size for buttons */
+    font-size: 18px;
 }
 
 .btn-field button:hover {
