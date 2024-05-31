@@ -29,6 +29,11 @@ nav{
 
 .sidebar {
     border-style: none;
+    width: 100px;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .middlesection{
@@ -183,4 +188,22 @@ button p{
     align-self: flex-start;
     max-width: 80%;
   }
-  
+  .upgrade {
+    border-top: 0.5px solid  #3e3e3e;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 80px;
+    padding-top: 10%;
+    margin: -40px;
+    
+}
+.history {
+    padding: 10px;
+    margin: 10;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    cursor: pointer;
+
+
+}
