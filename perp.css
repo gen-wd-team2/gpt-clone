@@ -167,7 +167,7 @@ hr {
     right: 20px;
     top: 100px;
     margin-left: 20%;
-    background-color: none;
+    background-color: black;
     border-color: none;
     overflow-y: auto;
     min-height: 60vh; /* Ensure the chat container covers a good expanse of the page */
