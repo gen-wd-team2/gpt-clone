@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: gray;
 }
 
 
@@ -35,7 +36,7 @@ color: wheat !important;
 }
 
 .form-box h1 {
-    color: blue;
+    color: green;
     position: relative;
 }
 
@@ -57,8 +58,9 @@ color: wheat !important;
 }
 
 .inputfield {
-    background-color: palevioletred;
+    background-color: white;
     margin: 15px 0;
+    border-color: gray;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -91,14 +93,15 @@ input {
 
 .btn-field button {
     flex-basis: 100%; 
-    background: purple;
+    /* background-color: white; */
     height: 50px; 
-    border: 0;
+    border: 10px;
     padding: 0; 
     display: flex;
     align-items: center;
     justify-content: center;
     outline: 0;
+    /* color: white; */
     cursor: pointer;
     transition: background-color 0.5s, transform 0.5s;
     font-size: 18px;
@@ -109,7 +112,7 @@ input {
 }
 
 .btn-field button:hover {
-    background-color: blue;
+    background-color: gray;
     transform: scale(1.05);
 }
 

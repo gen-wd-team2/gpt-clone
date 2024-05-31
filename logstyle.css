@@ -28,7 +28,7 @@ body {
 }
 
 .form-box h1 {
-    color: blue;
+    color: green;
     position: relative;
     margin-bottom: 40px; 
 }
@@ -63,7 +63,7 @@ body {
 }
 
 .inputfield {
-    background-color: palevioletred;
+    background-color: white;
     margin: 15px 0;
     border-radius: 3px;
     display: flex;
