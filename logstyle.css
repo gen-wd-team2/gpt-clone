@@ -4,10 +4,9 @@
     box-sizing: border-box;
 }
 
-
-
-
-
+body {
+    transition: background-color 2s ease; /* Smooth transition for background color */
+}
 
 .container {
     width: 100%;
@@ -29,8 +28,9 @@
 }
 
 .form-box h1 {
-    color: blue;
+    color: green;
     position: relative;
+    margin-bottom: 40px; 
 }
 
 .form-box h1::after {
@@ -45,8 +45,25 @@
     transform: translateX(-50%);
 }
 
+.animated-text {
+    font-size: 24px; 
+    color: purple; 
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 3s infinite;
+    position: absolute; 
+    top: -40px; 
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
 .inputfield {
-    background-color: palevioletred;
+    background-color: white;
     margin: 15px 0;
     border-radius: 3px;
     display: flex;
@@ -68,7 +85,7 @@ input {
     border: 0;
     outline: 0;
     padding-left: 15px;
-    font-size: 18px; /* Larger font size for better readability */
+    font-size: 18px;
 }
 
 form p {
@@ -84,24 +101,24 @@ form p {
 
 .btn-field button {
     flex-basis: 48%;
-    background: purple;
-    height: 60px; /* Increased button height */
+    background: white;
+    height: 60px;
     border-radius: 40px;
     border: 0;
     outline: 0;
     cursor: pointer;
     transition: background-color 0.5s, transform 0.5s;
-    font-size: 18px; /* Larger font size for buttons */
+    font-size: 18px;
 }
 
 .btn-field button:hover {
-    background-color: green;
+    background-color: white;
     transform: scale(1.05);
 }
 
 .btn-field button.disable {
-    background: orange;
-    color: dimgray;
+    background: green;
+    color: white;
 }
 
 .inputgroup {
