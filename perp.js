@@ -38,80 +38,76 @@ const chatMessages = document.querySelector('#chatMessages');
 let userText = null;
 
 const createElement = (html, className) => {
-  const chatDiv = document.createElement("p");
+  const chatDiv = document.createElement('p');
   chatDiv.classList.add('chat', className);
   chatDiv.innerHTML = html;
   return chatDiv;
-}
+};
 
-const getChatResponse = () => {
+const getChatResponse = async (incomingChat) => {
   const API_URL = 'https://api.openai.com/v1/chat/completions';
+  const pElement = document.createElement("p");
 
   const requestOptions = {
     method: 'POST',
     headers: {
-        'Authorization': 'Bearer ${API_KEY}',
-        'Content-Type': 'application/json'
+      Authorization: `Bearer ${API_KEY}`,
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-        model: "text-davinci-003",
-        prompt: userText,
-        //messages: [{role: "user", content: "Hello!"}],
-        max_tokens: 2048,
-        temperature: 0.2,
-        n: 1,
-        stop: null
-        })  
-}
+      model: 'gpt-3.5-turbo-16k',
+      messages: [
+        //{ role: 'system', content: 'You are a helpful assistant.' },
+        { role: 'user', content: userText },
+      ],
+      max_tokens: 2048,
+      temperature: 0.2,
+    }),  
+      };
+
+      try {
+        const response = await (await fetch(API_URL, requestOptions)).json();
+        if (response.choices && response.choices.length > 0) {
+          pElement.textContent = response.choices[0].text.trim();
+        } else {
+          pElement.textContent = 'Error: No response from API';
+        }
+      } catch (error) {
+        console.error(error);
+        pElement.textContent = 'Error: Unable to fetch response';
+      }
+
+      incomingChat.querySelector('.typing-animation').remove();
+      incomingChat.appendChild(pElement);
+};
 
 const showTypingAnimation = () => {
-  const html = `<div>
-                  <div style="--delay: 0.2s"></div>
-                  <div style="--delay: 0.3s"></div>
-                  <div style="--delay: 0.4s"></div>
+  const html = `<div class="typing-animation">
+                    <div class="typing-dot" style="--delay: 0.2s"></div>
+                    <div class="typing-dot" style="--delay: 0.3s"></div>
+                    <div class="typing-dot" style="--delay: 0.4s"></div>
                 </div>`;
-  const outgoingChat = createElement(html,'incoming');
-  chatMessages.appendChild(outgoingChat);
-  getChatResponse();
-}
+  const incomingChat = createElement(html,'incoming');
+  chatMessages.appendChild(incomingChat);
+  getChatResponse(incomingChat);
+};
 
 const handleOutgoingChat = () => {
   userText = chatInput.value.trim(); //get chat input and remove whitespaces
+  
   if (userText) {
+  // Hide the middle section
+  document.querySelector('.middlesection').style.display = 'none';
+  document.querySelector('.chat-container').style.display = 'block';
+
   const html = `<p>${userText}</p>`;
   const outgoingChat = createElement(html,'outgoing');
   chatMessages.appendChild(outgoingChat); // Append the chat message to the chat container
   chatInput.value = ''; // Clear the input field after sending the message
-  setTimeout(() => { // Scroll after a short delay to ensure new chat appears separately
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }, 100);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
   setTimeout(showTypingAnimation, 500);
         }
-    }
-
-// async function getMessage() {
-//     console.log('clicked')
-//     // const options = {
-//     //     method: 'POST',
-//     //     headers: {
-//     //         'Authorization': 'Bearer ${API_KEY}',
-//     //         'Content-Type': 'application/json'
-//     //     },
-//     //     body: JSON.stringify({
-//     //         model: "gpt-3.5-turbo-16k",
-//     //         messages: [{role: "user", content: "Hello!"}],
-//     //         max_tokens: 100
-//     //         })  
-//     // }
-//     // try {
-//     //     const response = await fetch('https://api.openai.com/v1/chat/completions', options)
-//     //     const data = await response.json()
-//     //     console.log(data)
-//     // }
-//     // catch (error){
-//     //     console.error(error)
-//     // }
-// }
+    };
 
 submitButton.addEventListener('click', handleOutgoingChat)
 chatInput.addEventListener('keypress', (event) => {

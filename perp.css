@@ -24,9 +24,9 @@ nav{
     display: flex;
 }
 
-.right{
+/* .right{
     
-}
+} */
 
 .middlesection{
     display: grid;
@@ -117,6 +117,7 @@ button p{
 
 /* Fred added this part of the code */
 .chat-container {
+    display: none; /* Hide the chat container initially */
     max-width: 80%;
     margin: 20px auto;
     padding: 20px;
@@ -129,6 +130,7 @@ button p{
     background-color: grey;
     border-color: none;
     overflow-y: auto;
+    min-height: 60vh; /* Ensure the chat container covers a good expanse of the page */
   }
   .chat {
     margin-bottom: 10px;
@@ -136,11 +138,15 @@ button p{
     border-radius: 5px;
     word-wrap: break-word;
   }
-  .outgoing {
+  
+.outgoing {
     text-align: right;
     color: black;
   }
-  .incoming {
+
+.incoming {
     background-color: #E5E5EA;
+    color: black;
     text-align: left;
   }
+  
