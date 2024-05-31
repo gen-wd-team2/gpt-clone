@@ -4,9 +4,6 @@ document.getElementById('refreshButton').addEventListener('click', function() {
     location.reload();
   });
   
-  function displayAnswer(content) {
-    displayArea.innerHTML = content;
-  }
  document.querySelectorAll('.question-button').forEach(button => {
     button.addEventListener('click', function() {
       const question = this.querySelector('div').textContent;
