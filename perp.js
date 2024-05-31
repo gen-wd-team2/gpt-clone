@@ -20,6 +20,20 @@ document.getElementById('refreshButton').addEventListener('click', function() {
     }
   });
 
+  const uploadFile = async (file) => {
+    const formData = new FormData()
+    formData.append('file', file)
+
+    try {
+      const res = await fetch('http://127.0.0.1:8000/uploadfile',{
+        method: 'POST', 
+        body: formData
+    })
+    } catch (error) {
+      console.error('Error uploading file', error)
+    }
+  } 
+
   document.getElementById('askButton').addEventListener('click', function() {
     const questionInput = document.getElementById('questionInput');
     const question = questionInput.value;
