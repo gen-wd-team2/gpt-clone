@@ -60,18 +60,18 @@
         passwordfield.style.padding = "15px";
         
         setInterval(() => {
-            dynamicText.style.opacity = 0; // Start fading out
+            dynamicText.style.opacity = 0; 
             setTimeout(() => {
-                dynamicText.textContent = messages[messageIndex]; // Change text
-                dynamicText.style.opacity = 1; // Fade in
-                messageIndex = (messageIndex + 1) % messages.length; // Cycle through messages
-            }, 1000); // Change after 1 second
-        }, 4000); // Every 4 seconds
+                dynamicText.textContent = messages[messageIndex];
+                dynamicText.style.opacity = 1;
+                messageIndex = (messageIndex + 1) % messages.length;
+            }, 1000);
+        }, 4000);
 
         setInterval(() => {
-            document.body.style.backgroundColor = backgroundColors[backgroundColorIndex]; // Change background color
-            backgroundColorIndex = (backgroundColorIndex + 1) % backgroundColors.length; // Cycle through colors
-        }, 4000); // Every 4 seconds
+            document.body.style.backgroundColor = backgroundColors[backgroundColorIndex]; 
+            backgroundColorIndex = (backgroundColorIndex + 1) % backgroundColors.length; 
+        }, 4000); 
     }
 
     Signinbtn.onclick = function () {
