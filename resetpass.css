@@ -41,7 +41,7 @@
 }
 
 .inputfield {
-    background-color: palevioletred;
+    background-color: white;
     margin: 15px 0;
     border-radius: 3px;
     display: flex;
@@ -79,7 +79,7 @@ form p {
 
 .btn-field button {
     flex-basis: 100%;
-    background: purple;
+    background: white;
     height: 60px;
     border-radius: 40px;
     border: 0;
