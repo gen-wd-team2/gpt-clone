@@ -30,7 +30,7 @@ body {
 .form-box h1 {
     color: blue;
     position: relative;
-    margin-bottom: 40px; /* Add margin bottom to create space for animated text */
+    margin-bottom: 40px; 
 }
 
 .form-box h1::after {
@@ -46,15 +46,15 @@ body {
 }
 
 .animated-text {
-    font-size: 24px; /* Larger font size */
-    color: purple; /* Purple color */
+    font-size: 24px; 
+    color: purple; 
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeIn 3s infinite;
-    position: absolute; /* Position the text absolutely */
-    top: -40px; /* Adjust the top position */
-    left: 50%; /* Center the text horizontally */
-    transform: translateX(-50%); /* Center the text horizontally */
+    position: absolute; 
+    top: -40px; 
+    left: 50%; 
+    transform: translateX(-50%);
 }
 
 @keyframes fadeIn {
@@ -101,7 +101,7 @@ form p {
 
 .btn-field button {
     flex-basis: 48%;
-    background: purple;
+    background: white;
     height: 60px;
     border-radius: 40px;
     border: 0;
@@ -112,13 +112,13 @@ form p {
 }
 
 .btn-field button:hover {
-    background-color: green;
+    background-color: white;
     transform: scale(1.05);
 }
 
 .btn-field button.disable {
-    background: orange;
-    color: dimgray;
+    background: green;
+    color: white;
 }
 
 .inputgroup {
