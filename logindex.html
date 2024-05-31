@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="logstyle.css">
+    <link rel="stylesheet" href="logstyle.css">
     <script src="https://kit.fontawesome.com/205c931bcf.js" crossorigin="anonymous"></script>
     <title>Create An Account</title>
 </head>
@@ -12,6 +12,7 @@
 <div class="container">
     <div class="form-box">
         <h1 id="title">Create An Account</h1>
+        <div class="animated-text" id="dynamicText">• Let us create together</div> <!-- Moved above the form -->
         <form action="">
             <div class="inputgroup">
                 <div class="inputfield" id="namefield">
@@ -35,46 +36,67 @@
         </form>
     </div>
 </div>
+
 <script>
-let Signupbtn = document.getElementById("Signupbtn");
-let Signinbtn = document.getElementById("Signinbtn");
-let namefield = document.getElementById("namefield");
-let emailfield = document.getElementById("emailfield");
-let passwordfield = document.getElementById("passwordfield");
-let title = document.getElementById("title");
+    let Signupbtn = document.getElementById("Signupbtn");
+    let Signinbtn = document.getElementById("Signinbtn");
+    let namefield = document.getElementById("namefield");
+    let emailfield = document.getElementById("emailfield");
+    let passwordfield = document.getElementById("passwordfield");
+    let title = document.getElementById("title");
+    let dynamicText = document.getElementById("dynamicText");
 
-window.onload = function() {
-    namefield.style.maxHeight = "70px";
-    namefield.style.padding = "15px";
-    emailfield.style.maxHeight = "70px";
-    emailfield.style.padding = "15px";
-    passwordfield.style.maxHeight = "70px";
-    passwordfield.style.padding = "15px";
-}
+    const messages = ["• Let us create together", "• Let's invent", "• Let's explore"];
+    let messageIndex = 0;
+    let backgroundColorIndex = 0;
+    const backgroundColors = ["gray", "white"];
 
-Signinbtn.onclick = function () {
-    namefield.style.maxHeight = "0";
-    namefield.style.padding = "0 10px";
-    emailfield.style.maxHeight = "70px";
-    emailfield.style.padding = "15px";
-    passwordfield.style.maxHeight = "70px";
-    passwordfield.style.padding = "15px";
-    title.innerHTML = "Sign In";
-    Signupbtn.classList.add("disable");
-    Signinbtn.classList.remove("disable");
-}
+    window.onload = function() {
+        namefield.style.maxHeight = "70px";
+        namefield.style.padding = "15px";
+        emailfield.style.maxHeight = "70px";
+        emailfield.style.padding = "15px";
+        passwordfield.style.maxHeight = "70px";
+        passwordfield.style.padding = "15px";
+        
+        setInterval(() => {
+            dynamicText.style.opacity = 0; // Start fading out
+            setTimeout(() => {
+                dynamicText.textContent = messages[messageIndex]; // Change text
+                dynamicText.style.opacity = 1; // Fade in
+                messageIndex = (messageIndex + 1) % messages.length; // Cycle through messages
+            }, 1000); // Change after 1 second
+        }, 4000); // Every 4 seconds
 
-Signupbtn.onclick = function () {
-    namefield.style.maxHeight = "70px";
-    namefield.style.padding = "15px";
-    emailfield.style.maxHeight = "70px";
-    emailfield.style.padding = "15px";
-    passwordfield.style.maxHeight = "70px";
-    passwordfield.style.padding = "15px";
-    title.innerHTML = "Sign Up";
-    Signupbtn.classList.remove("disable");
-    Signinbtn.classList.add("disable");
-}
+        setInterval(() => {
+            document.body.style.backgroundColor = backgroundColors[backgroundColorIndex]; // Change background color
+            backgroundColorIndex = (backgroundColorIndex + 1) % backgroundColors.length; // Cycle through colors
+        }, 4000); // Every 4 seconds
+    }
+
+    Signinbtn.onclick = function () {
+        namefield.style.maxHeight = "0";
+        namefield.style.padding = "0 10px";
+        emailfield.style.maxHeight = "70px";
+        emailfield.style.padding = "15px";
+        passwordfield.style.maxHeight = "70px";
+        passwordfield.style.padding = "15px";
+        title.innerHTML = "Sign In";
+        Signupbtn.classList.add("disable");
+        Signinbtn.classList.remove("disable");
+    }
+
+    Signupbtn.onclick = function () {
+        namefield.style.maxHeight = "70px";
+        namefield.style.padding = "15px";
+        emailfield.style.maxHeight = "70px";
+        emailfield.style.padding = "15px";
+        passwordfield.style.maxHeight = "70px";
+        passwordfield.style.padding = "15px";
+        title.innerHTML = "Sign Up";
+        Signupbtn.classList.remove("disable");
+        Signinbtn.classList.add("disable");
+    }
 </script>
 </body>
 </html>
