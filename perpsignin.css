@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    font-family: sans-serif;
+}
+.container {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+    margin-block: 5rem;
+    border: none;
+    
+}
+a{
+    text-decoration: none;
+    color:#0ca37f ;
+}
+h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.continue-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #10a37f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.continue-button:hover {
+    background-color: #0e8b6c;
+}
+.additional-options {
+    margin-top: 20px;
+}
+.btn {
+    width: 300px;
+    margin-block: 10px;
+}
+hr {
+    margin: 20px 0;
+}
+
+#v.hr{
+    display: inline-block;
+    height: 50px; 
+    border-left: 1px solid #ccc;
+    margin: 0 20px;
+}
+.options-button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.options-button:hover {
+    background-color: #0056b3;
+}
+p {
+    margin: 20px 0 10px;
+}
+.logo{
+   margin-block: 3rem;}
+
+.logo i{
+    text-align: center;
+    font-size: 50px;
+    padding-block: .5rem;
+    
+}
+#last{
+    color: #0ca37f;
+}
+.btn{
+    padding-right: 10px;
+}
