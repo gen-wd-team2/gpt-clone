@@ -28,7 +28,7 @@ body {
 }
 
 .form-box h1 {
-    color: blue;
+    color: green;
     position: relative;
     margin-bottom: 40px; /* Add margin bottom to create space for animated text */
 }
@@ -47,7 +47,7 @@ body {
 
 .animated-text {
     font-size: 24px; /* Larger font size */
-    color: purple; /* Purple color */
+    color: green; /* Purple color */
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeIn 3s infinite;
@@ -101,7 +101,7 @@ form p {
 
 .btn-field button {
     flex-basis: 48%;
-    background: purple;
+    background: green;
     height: 60px;
     border-radius: 40px;
     border: 0;
@@ -112,7 +112,7 @@ form p {
 }
 
 .btn-field button:hover {
-    background-color: green;
+    background-color: gray;
     transform: scale(1.05);
 }
 
