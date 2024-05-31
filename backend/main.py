@@ -1,12 +1,20 @@
 from fastapi import FastAPI, Depends, UploadFile
-from . langchain_helper import get_response_from_query, create_vector_db
-import pickle
+from fastapi.middleware.cors import CORSMiddleware
+from . langchain_helper import get_response_from_query
 import os
 import shutil
 
+origins = ["*"]
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],)
 
 @app.post("/uploadfile")
 async def create_upload_file(file: UploadFile):
