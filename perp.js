@@ -34,6 +34,9 @@ const API_KEY = 'sk-proj-t0Uu83FTGrdB42sXgHk4T3BlbkFJtsijqDutQOkuXUjB6AFN'
 const chatInput = document.querySelector('#questionInput')
 const submitButton = document.querySelector('#askButton')
 const chatMessages = document.querySelector('#chatMessages');
+const middleSection = document.querySelector('.middlesection'); // Select the middle section
+const questionButtons = document.querySelectorAll('.question-button'); // Select the question buttons
+
 
 let userText = null;
 
@@ -92,8 +95,8 @@ const showTypingAnimation = () => {
   getChatResponse(incomingChat);
 };
 
-const handleOutgoingChat = () => {
-  userText = chatInput.value.trim(); //get chat input and remove whitespaces
+const handleOutgoingChat = (text) => {
+  userText = text || chatInput.value.trim(); //get chat input and remove whitespaces
   
   if (userText) {
   // Hide the middle section
@@ -114,5 +117,13 @@ chatInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     handleOutgoingChat();
   }
+});
+
+// Add click event listeners to each question button
+questionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const buttonText = button.querySelector('div').textContent.trim(); // Get the text content of the button
+    handleOutgoingChat(buttonText); // Send the text as outgoing message
+  });
 });
 
