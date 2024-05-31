@@ -146,6 +146,16 @@ button p{
 .dropdown-item{
     color:rgba(155, 155, 155, 1);
 }
+
+.dropdown-item .bi {
+    margin-right: 10px; 
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;}
+
 .input{
     width: 35%;
    border-radius: 70%rem;
@@ -162,7 +172,7 @@ button p{
     right: 20px;
     top: 100px;
     margin-left: 20%;
-    background-color: none;
+    background-color: black;
     border-color: none;
     overflow-y: auto;
     min-height: 60vh; /* Ensure the chat container covers a good expanse of the page */
