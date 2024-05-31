@@ -197,6 +197,8 @@ hr {
     text-align: left;
     align-self: flex-start;
     max-width: 80%;
+
+/* Kingsford added this part of the code */
   }
   .upgrade {
     border-top: 0.5px solid  #3e3e3e;
