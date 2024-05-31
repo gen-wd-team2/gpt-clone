@@ -35,7 +35,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 390%;
-    
+    cursor: pointer;
 }
 .bi-layout-text-sidebar{
     font-size: 20px;
